@@ -9,6 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="biru_muda">#2CB3FF</color>
     <color name="biru">#0C2E8A</color>
+    <color name="biru_secondary">#0030B1</color>
+    <color name="main_bg">#eee</color>
     <color name="tosca">#50D8AF</color>
     <color name="warning">#f49e0b</color>
     <color name="danger">#ff0025</color>
