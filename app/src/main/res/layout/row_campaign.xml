@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:id="@+id/imageIv"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/titleTv"
+            android:text="Ini judul uwuwu"
+            android:textSize="16sp"
+            android:fontFamily="@font/nbold"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/imageIv"
+            android:layout_toEndOf="@+id/imageIv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/penggalangTv"
+            android:text="Iqbal Ikhlasul Amal"
+            android:textSize="12sp"
+            android:fontFamily="@font/nreg"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/imageIv"
+            android:layout_toEndOf="@+id/imageIv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/titleTv"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/danaTv"
+            android:text="120.000"
+            android:textSize="12sp"
+            android:fontFamily="@font/nbold"
+            android:textColor="@color/biru"
+            android:layout_toRightOf="@+id/imageIv"
+            android:layout_toEndOf="@+id/imageIv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/penggalangTv"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/terkumpulTv"
+            android:text="Terkumpul dari"
+            android:textSize="12sp"
+            android:fontFamily="@font/nreg"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/danaTv"
+            android:layout_toEndOf="@+id/danaTv"
+            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/penggalangTv"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/targetDonationTv"
+            android:text="1.000.000"
+            android:textSize="12sp"
+            android:fontFamily="@font/nbold"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/terkumpulTv"
+            android:layout_toEndOf="@+id/terkumpulTv"
+            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/penggalangTv"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/endDateTv"
+            android:text="10"
+            android:textSize="12sp"
+            android:fontFamily="@font/nbold"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/imageIv"
+            android:layout_toEndOf="@+id/imageIv"
+            android:layout_marginLeft="3dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/danaTv"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hariTv"
+            android:text="Hari lagi"
+            android:textSize="12sp"
+            android:fontFamily="@font/nreg"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/endDateTv"
+            android:layout_toEndOf="@+id/endDateTv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/danaTv"
+            />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

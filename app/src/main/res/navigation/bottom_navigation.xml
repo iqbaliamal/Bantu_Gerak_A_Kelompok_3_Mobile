@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.bantugerak_mobile.HomeFragment"
+        android:name="com.example.bantugerak_mobile.fragment.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/donationFragment"
-        android:name="com.example.bantugerak_mobile.donationFragment"
+        android:name="com.example.bantugerak_mobile.fragment.donationFragment"
         android:label="Donation"
         tools:layout="@layout/fragment_donation" />
     <fragment
         android:id="@+id/campaignFragment"
-        android:name="com.example.bantugerak_mobile.campaignFragment"
+        android:name="com.example.bantugerak_mobile.fragment.campaignFragment"
         android:label="Campaign"
         tools:layout="@layout/fragment_campaign" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.bantugerak_mobile.profileFragment"
+        android:name="com.example.bantugerak_mobile.fragment.profileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

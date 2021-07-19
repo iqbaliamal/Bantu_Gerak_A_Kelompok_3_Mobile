@@ -1,4 +1,4 @@
-package com.example.bantugerak_mobile
+package com.example.bantugerak_mobile.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -34,7 +34,7 @@ class donationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_donation, container, false)
+        return inflater.inflate(com.example.bantugerak_mobile.R.layout.fragment_donation, container, false)
     }
 
     companion object {

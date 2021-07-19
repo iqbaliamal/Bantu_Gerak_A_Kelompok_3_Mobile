@@ -7,13 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="biru_muda">#2CB3FF</color>
-    <color name="biru">#0C2E8A</color>
-    <color name="biru_secondary">#0030B1</color>
-    <color name="main_bg">#eee</color>
-    <color name="tosca">#50D8AF</color>
-    <color name="warning">#f49e0b</color>
-    <color name="danger">#ff0025</color>
-    <color name="success">#0b9936</color>
-    <color name="expired">#4b4b4b</color>
+    <color name="biru_muda">#18a4e0</color>
+    <color name="biru">#0253b3</color>
+    <color name="biru_secondary">#0057cc</color>
+    <color name="main_bg">#eff2f4</color>
+    <color name="tosca">#14c6a4</color>
+    <color name="warning">#f3ae4e</color>
+    <color name="danger">#cf5c60</color>
+    <color name="success">#4ab471</color>
+    <color name="expired">#344a5f</color>
 </resources>

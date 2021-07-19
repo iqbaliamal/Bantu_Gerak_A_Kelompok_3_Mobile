@@ -1,13 +1,18 @@
-package com.example.bantugerak_mobile
+package com.example.bantugerak_mobile.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.R
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
+import com.example.bantugerak_mobile.adapter.AdapterCampaign
+import com.example.bantugerak_mobile.model.Campaign
 import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,6 +30,8 @@ class HomeFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var rVCqmpaign:RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -38,10 +45,12 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_home, container, false)
+        val view: View = inflater.inflate(com.example.bantugerak_mobile.R.layout.fragment_home, container, false)
+
+        rVCqmpaign = view.findViewById(com.example.bantugerak_mobile.R.id.rv_campaign)
 
         // Inflate the layout for this fragment
-        val imageSlider = view.findViewById<ImageSlider>(R.id.image_slider)
+        val imageSlider = view.findViewById<ImageSlider>(com.example.bantugerak_mobile.R.id.image_slider)
         val imageList = ArrayList<SlideModel>()
 
         imageList.add(SlideModel("https://cdn1-production-images-kly.akamaized.net/Lp4ZMNdzQ89iphOeDwpz1A0UV5g=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2703835/original/060532300_1547463460-macam-macam_bencana_alam.jpg"))
@@ -50,8 +59,56 @@ class HomeFragment : Fragment() {
         imageList.add(SlideModel("https://awsimages.detik.net.id/visual/2020/01/02/05686423-6018-4448-b20e-9cc415885723.png?w=650"))
 
         imageSlider.setImageList(imageList,ScaleTypes.FIT)
+
+        val layoutManager = LinearLayoutManager(activity)
+        layoutManager.orientation = LinearLayoutManager.VERTICAL
+
+
+        rVCqmpaign.adapter = AdapterCampaign(requireActivity(),arrCampaign)
+        rVCqmpaign.layoutManager = layoutManager
+
+
         return view
 //        return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    val arrCampaign: ArrayList<Campaign>get() {
+        val arr = ArrayList<Campaign>()
+        val c1 = Campaign()
+        c1.gambar = com.example.bantugerak_mobile.R.drawable.circle_logo
+        c1.title = "Galang dana untuk bencana"
+        c1.penggalang = "Iqbal Ikhlasul Amal"
+        c1.danaSementara = "Rp.1.000.000"
+        c1.terkumpultxt = "Terkumpul dari"
+        c1.target = "Rp.10.000.000"
+        c1.maxDate = "16"
+        c1.hariLagi = "Hari Lagi"
+
+        val c2 = Campaign()
+        c2.gambar = com.example.bantugerak_mobile.R.drawable.circle_logo
+        c2.title = "Galang dana untuk bencana"
+        c2.penggalang = "Iqbal Ikhlasul Amal"
+        c2.danaSementara = "Rp.1.000.000"
+        c2.terkumpultxt = "Terkumpul dari"
+        c2.target = "Rp.10.000.000"
+        c2.maxDate = "16"
+        c2.hariLagi = "Hari Lagi"
+
+        val c3 = Campaign()
+        c3.gambar = com.example.bantugerak_mobile.R.drawable.circle_logo
+        c3.title = "Galang dana untuk bencana"
+        c3.penggalang = "Iqbal Ikhlasul Amal"
+        c3.danaSementara="Rp.1.000.000"
+        c3.terkumpultxt = "Terkumpul dari"
+        c3.target = "Rp.10.000.000"
+        c3.maxDate = "16"
+        c3.hariLagi = "Hari Lagi"
+
+        arr.add(c1)
+        arr.add(c2)
+        arr.add(c3)
+
+        return arr
     }
 
     companion object {
