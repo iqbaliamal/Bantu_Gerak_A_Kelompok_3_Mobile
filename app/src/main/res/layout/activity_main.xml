@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:background="#fff"
         android:layout_alignParentBottom="true"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_menu"/>
 
     <fragment

@@ -11,6 +11,7 @@ class Campaign : Serializable {
     lateinit var target:String
     lateinit var maxDate:String
     lateinit var hariLagi:String
+    lateinit var cerita:String
     var gambar:Int = 0
 
 }

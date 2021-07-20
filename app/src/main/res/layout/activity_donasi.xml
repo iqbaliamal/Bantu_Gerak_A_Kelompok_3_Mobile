@@ -1,9 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:id="@+id/bottom_sheet"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DonasiActivity">
+    tools:context=".DonasiActivity"
+    android:background="@drawable/bg_donasi"
+    android:orientation="vertical"
+    android:padding="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:layout_width="70dp"
+        android:layout_height="5dp"
+        android:background="@drawable/bg_slide_modal"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Masukkan Nominal Donasi"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/nexbold"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:textAlignment="center"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_slide_modal"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/nominal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Rp."
+            android:textStyle="bold"
+            android:fontFamily="@font/nreg"
+            android:textColorHint="@color/black"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Min. Donasi Rp. 10.000"
+        android:fontFamily="@font/nreg"
+        android:layout_below="@+id/nominal"
+        android:textSize="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tulis do'a di donasi ini"
+        android:fontFamily="@font/nreg"
+        android:textSize="12dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_penggalang"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:inputType="text|textMultiLine"
+            android:hint="Tulis doa untuk penggalang dana atau harapan mu sendiri disini, agar harapan mu dapat dilihat dan diamini oleh orang lain."
+            android:textSize="12dp"
+            android:fontFamily="@font/nreg"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:gravity="top"
+            android:padding="15dp"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/donasi_sekarang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DONASI SEKARANG"
+        android:textSize="18sp"
+        android:fontFamily="@font/nexbold"
+        android:textStyle="bold"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_bg"
+        android:layout_gravity="center"/>
+
+
+</LinearLayout>

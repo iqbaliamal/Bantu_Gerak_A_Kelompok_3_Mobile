@@ -11,8 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Bantugerak_mobile">
-        <activity android:name=".DonasiActivity"></activity>
-        <activity android:name=".DetailCampaignActivity" />
+        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".DonasiActivity" />
+        <activity android:name=".DetailCampaignActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".MainActivity" />
         <activity
             android:name=".SplashScreenActivity"

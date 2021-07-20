@@ -75,34 +75,37 @@ class HomeFragment : Fragment() {
     val arrCampaign: ArrayList<Campaign>get() {
         val arr = ArrayList<Campaign>()
         val c1 = Campaign()
-        c1.gambar = com.example.bantugerak_mobile.R.drawable.circle_logo
+        c1.gambar = com.example.bantugerak_mobile.R.drawable.gunung
         c1.title = "Galang dana untuk bencana"
         c1.penggalang = "Iqbal Ikhlasul Amal"
-        c1.danaSementara = "Rp.1.000.000"
+        c1.danaSementara = "Rp.80.000.000"
         c1.terkumpultxt = "Terkumpul dari"
-        c1.target = "Rp.10.000.000"
+        c1.target = "Rp.90.000.000"
         c1.maxDate = "16"
         c1.hariLagi = "Hari Lagi"
+        c1.cerita = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
         val c2 = Campaign()
         c2.gambar = com.example.bantugerak_mobile.R.drawable.circle_logo
         c2.title = "Galang dana untuk bencana"
-        c2.penggalang = "Iqbal Ikhlasul Amal"
-        c2.danaSementara = "Rp.1.000.000"
+        c2.penggalang = "Boby"
+        c2.danaSementara = "Rp.11.000.000"
         c2.terkumpultxt = "Terkumpul dari"
-        c2.target = "Rp.10.000.000"
+        c2.target = "Rp.20.000.000"
         c2.maxDate = "16"
         c2.hariLagi = "Hari Lagi"
+        c2.cerita = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
         val c3 = Campaign()
-        c3.gambar = com.example.bantugerak_mobile.R.drawable.circle_logo
+        c3.gambar = com.example.bantugerak_mobile.R.drawable.gunung
         c3.title = "Galang dana untuk bencana"
-        c3.penggalang = "Iqbal Ikhlasul Amal"
-        c3.danaSementara="Rp.1.000.000"
+        c3.penggalang = "Feby"
+        c3.danaSementara="Rp.6.000.000"
         c3.terkumpultxt = "Terkumpul dari"
         c3.target = "Rp.10.000.000"
         c3.maxDate = "16"
         c3.hariLagi = "Hari Lagi"
+        c3.cerita = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
         arr.add(c1)
         arr.add(c2)
