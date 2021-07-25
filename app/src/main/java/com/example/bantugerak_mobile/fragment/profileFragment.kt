@@ -7,9 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
+import android.widget.TextView
+import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.Navigation
+import com.example.bantugerak_mobile.DonasiActivity
 import com.example.bantugerak_mobile.LoginActivity
 import com.example.bantugerak_mobile.R
 import com.example.bantugerak_mobile.helper.SharedPref
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +30,10 @@ class profileFragment : Fragment() {
 
     lateinit var s:SharedPref
     lateinit var btn_logout: RelativeLayout
+    lateinit var tvNama: TextView
+    lateinit var tvEmail: TextView
+    lateinit var tvPhone: TextView
+    lateinit var btnRiwayat: RelativeLayout
 
 
 
@@ -50,8 +59,25 @@ class profileFragment : Fragment() {
         init(view)
         s = SharedPref(requireActivity())
         btnLogout()
+        btnRiwayat()
+        setData()
 
         return view
+    }
+
+    private fun setData() {
+        if (s.getUser() == null){
+            val intent = Intent(activity, LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            return
+        }
+
+
+        val data = s.getUser()!!
+
+        tvNama.text = data.name
+        tvEmail.text = data.email
     }
 
     companion object {
@@ -83,9 +109,20 @@ class profileFragment : Fragment() {
         }
     }
 
+    private fun btnRiwayat(){
+        btnRiwayat.setOnClickListener {
+            val fragmentB = donationFragment()
+            requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment, fragmentB, "donationFragment")
+                    .commit()
+        }
+    }
+
     private fun init(view: View) {
         btn_logout = view.findViewById(R.id.btn_logout)
-
+        tvNama = view.findViewById(R.id.tv_Nama)
+        tvEmail = view.findViewById(R.id.tv_Email)
+        btnRiwayat = view.findViewById(R.id.btn_riwayat)
     }
 
 }

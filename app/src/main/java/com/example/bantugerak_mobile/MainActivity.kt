@@ -83,16 +83,13 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.profileFragment -> {
-                    makeCurrentFragment(fragmentProfile)
-                    Log.i(TAG, "Profile Selected")
-                    badgeClear(R.id.profileFragment)
-//                    if (s.getStatusLogin()) {
-//                        makeCurrentFragment(fragmentProfile)
-//                        Log.i(TAG, "Settings Selected")
-//                        badgeClear(R.id.nav_profile)
-//                    } else {
-//                        startActivity(Intent(this, login::class.java))
-//                    }
+                    if (s.getStatusLogin()) {
+                        makeCurrentFragment(fragmentProfile)
+                        Log.i(TAG, "Settings Selected")
+                        badgeClear(R.id.donationFragment)
+                    } else {
+                        startActivity(Intent(this, LoginActivity::class.java))
+                    }
                 }
 
             }

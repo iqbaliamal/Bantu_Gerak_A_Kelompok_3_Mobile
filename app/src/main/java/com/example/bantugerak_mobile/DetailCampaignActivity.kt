@@ -39,19 +39,21 @@ class DetailCampaignActivity : AppCompatActivity() {
 
 
     private fun getData() {
-
         val data = intent.getStringExtra("extra")
         val campaign = Gson().fromJson<Campaign>(data, Campaign::class.java)
+
+        val totalSementara = Integer.valueOf(campaign.sum_donation[0].total)
+        val target = Integer.valueOf(campaign.target_donation)
         //set value
 
         title_detail.text = campaign.title
-        danaTerkumpulDetail.text = campaign.danaSementara
-        targetDetail.text = campaign.target
-        maxDateDetail.text = campaign.maxDate
-        namaPenggalangDetail.text = campaign.penggalang
-        cerita.text = campaign.cerita
+        danaTerkumpulDetail.text = helper().moneyFormat(totalSementara)
+        targetDetail.text = helper().moneyFormat(target)
+        maxDateDetail.text = campaign.max_date
+        namaPenggalangDetail.text = campaign.user.name
+        cerita.text = campaign.description
 
-        val img = campaign.gambar
+        val img = campaign.image
         Picasso.get()
                 .load(img)
                 .resize(400, 300)

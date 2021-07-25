@@ -22,7 +22,7 @@
         />
 
     <EditText
-        android:id="@+id/reg_nama"
+        android:id="@+id/reg_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nama"
@@ -56,17 +56,24 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"/>
 
-    <EditText
-        android:id="@+id/reg_password_confirm"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
-        android:textColor="@color/black"
-        android:fontFamily="@font/nreg"
-        android:textSize="14dp"
-        android:inputType="textPassword"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:id="@+id/reg_password_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nreg"
+            android:textSize="14dp"
+            android:inputType="textPassword"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/register_btn"
@@ -94,7 +101,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp">
         <TextView
-            android:id="@+id/btn_register"
+            android:id="@+id/btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sudah Punya Akun? "
@@ -114,6 +121,18 @@
 
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/pb"
+            android:layout_centerInParent="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+    </RelativeLayout>
 
 
 </LinearLayout>

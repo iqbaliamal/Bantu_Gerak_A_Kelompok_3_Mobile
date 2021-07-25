@@ -74,14 +74,6 @@
                         android:fontFamily="@font/nreg"
                         android:textColor="@color/black" />
 
-                    <TextView
-                        android:id="@+id/tv_Phone"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="Nomor Tlp"
-                        android:fontFamily="@font/nreg"
-                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/tv_Email"
@@ -92,6 +84,7 @@
                         android:fontFamily="@font/nreg"
                         android:textColor="@color/black"
                         android:layout_marginBottom="10dp"/>
+
                     <RelativeLayout
                         android:id="@+id/btn_riwayat"
                         android:layout_width="match_parent"
@@ -115,7 +108,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:text="Riwayat belanja"
+                                android:text="Riwayat Donasi"
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/nreg"
                                 android:layout_marginStart="10dp" />

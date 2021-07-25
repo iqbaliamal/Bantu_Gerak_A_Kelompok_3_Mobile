@@ -1,5 +1,7 @@
 package com.example.bantugerak_mobile.fragment
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,29 +10,40 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.ImageSlider
-import com.denzcoskun.imageslider.R
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
+import com.example.bantugerak_mobile.DetailCampaignActivity
+import com.example.bantugerak_mobile.R
 import com.example.bantugerak_mobile.adapter.AdapterCampaign
+import com.example.bantugerak_mobile.app.ApiConfig
 import com.example.bantugerak_mobile.model.Campaign
+import com.example.bantugerak_mobile.model.ResponModel
+import com.example.bantugerak_mobile.util.listener.CampaignItemListener
+import com.google.gson.Gson
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.*
+import kotlin.collections.ArrayList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
  * Use the [HomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), CampaignItemListener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
     lateinit var rVCqmpaign:RecyclerView
+    private var listCampaign:ArrayList<Campaign> = ArrayList()
+
+    private lateinit var campaignAdapter: AdapterCampaign
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,13 +57,18 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view: View = inflater.inflate(com.example.bantugerak_mobile.R.layout.fragment_home, container, false)
+    ): View {
+        val view: View = inflater.inflate(R.layout.fragment_home, container, false)
+        return view
+    }
 
-        rVCqmpaign = view.findViewById(com.example.bantugerak_mobile.R.id.rv_campaign)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        init(view)
 
         // Inflate the layout for this fragment
-        val imageSlider = view.findViewById<ImageSlider>(com.example.bantugerak_mobile.R.id.image_slider)
+        val imageSlider = view.findViewById<ImageSlider>(R.id.image_slider)
         val imageList = ArrayList<SlideModel>()
 
         imageList.add(SlideModel("https://cdn1-production-images-kly.akamaized.net/Lp4ZMNdzQ89iphOeDwpz1A0UV5g=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2703835/original/060532300_1547463460-macam-macam_bencana_alam.jpg"))
@@ -60,58 +78,41 @@ class HomeFragment : Fragment() {
 
         imageSlider.setImageList(imageList,ScaleTypes.FIT)
 
-        val layoutManager = LinearLayoutManager(activity)
-        layoutManager.orientation = LinearLayoutManager.VERTICAL
+//        campaignAdapter = AdapterCampaign(listCampaign)
 
-
-        rVCqmpaign.adapter = AdapterCampaign(requireActivity(),arrCampaign)
-        rVCqmpaign.layoutManager = layoutManager
-
-
-        return view
-//        return inflater.inflate(R.layout.fragment_home, container, false)
+        getCampaign()
     }
 
-    val arrCampaign: ArrayList<Campaign>get() {
-        val arr = ArrayList<Campaign>()
-        val c1 = Campaign()
-        c1.gambar = com.example.bantugerak_mobile.R.drawable.gunung
-        c1.title = "Galang dana untuk bencana"
-        c1.penggalang = "Iqbal Ikhlasul Amal"
-        c1.danaSementara = "Rp.80.000.000"
-        c1.terkumpultxt = "Terkumpul dari"
-        c1.target = "Rp.90.000.000"
-        c1.maxDate = "16"
-        c1.hariLagi = "Hari Lagi"
-        c1.cerita = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    fun displayCampaign(){
+        val layoutManager = LinearLayoutManager(activity)
+        layoutManager.orientation = LinearLayoutManager.VERTICAL
+//        rVCqmpaign.adapter = AdapterCampaign(requireActivity() , listCampaign)
+        campaignAdapter = AdapterCampaign(listCampaign)
+        campaignAdapter.itemListener(this)
 
-        val c2 = Campaign()
-        c2.gambar = com.example.bantugerak_mobile.R.drawable.circle_logo
-        c2.title = "Galang dana untuk bencana"
-        c2.penggalang = "Boby"
-        c2.danaSementara = "Rp.11.000.000"
-        c2.terkumpultxt = "Terkumpul dari"
-        c2.target = "Rp.20.000.000"
-        c2.maxDate = "16"
-        c2.hariLagi = "Hari Lagi"
-        c2.cerita = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        rVCqmpaign.adapter = campaignAdapter
+        rVCqmpaign.layoutManager = layoutManager
+    }
 
-        val c3 = Campaign()
-        c3.gambar = com.example.bantugerak_mobile.R.drawable.gunung
-        c3.title = "Galang dana untuk bencana"
-        c3.penggalang = "Feby"
-        c3.danaSementara="Rp.6.000.000"
-        c3.terkumpultxt = "Terkumpul dari"
-        c3.target = "Rp.10.000.000"
-        c3.maxDate = "16"
-        c3.hariLagi = "Hari Lagi"
-        c3.cerita = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    fun getCampaign(){
+        ApiConfig.instanceRetrofit.getCampaign().enqueue(object : Callback<ResponModel> {
+            override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
+                val res = response.body()!!
+                if(res.success == 1){
+                    listCampaign = res.campaigns
+                    displayCampaign()
+                }
+            }
 
-        arr.add(c1)
-        arr.add(c2)
-        arr.add(c3)
+            override fun onFailure(call: Call<ResponModel>, t: Throwable) {
 
-        return arr
+            }
+
+        })
+    }
+
+    private fun init(view: View){
+        rVCqmpaign = view.findViewById(R.id.rv_campaign)
     }
 
     companion object {
@@ -134,4 +135,15 @@ class HomeFragment : Fragment() {
             }
     }
 
+    override fun onClicked(campaign: Campaign) {
+        val goToActiviti = Intent(activity, DetailCampaignActivity::class.java)
+        goToActiviti.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        val str = Gson().toJson(campaign, Campaign::class.java)
+
+        goToActiviti.putExtra( "extra", str)
+
+        activity?.applicationContext?.startActivity(goToActiviti)
+    }
+
 }
+
