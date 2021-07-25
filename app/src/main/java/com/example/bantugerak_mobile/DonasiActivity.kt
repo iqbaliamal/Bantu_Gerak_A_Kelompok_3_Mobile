@@ -1,5 +1,6 @@
 package com.example.bantugerak_mobile
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,7 +23,9 @@ class DonasiActivity : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         donasi_sekarang.setOnClickListener {
-            Toast.makeText(context, "You pressed this button", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Donasi Anda Sedang Diproses", Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 //    override fun onCreate(savedInstanceState: Bundle?) {
