@@ -28,6 +28,9 @@ class DonasiActivity : BottomSheetDialogFragment() {
             val openURL = Intent(android.content.Intent.ACTION_VIEW)
             openURL.data = Uri.parse("http://bantugerak.workshopjti.com/")
             startActivity(openURL)
+//            Toast.makeText(context, "Donasi Anda Sedang Diproses", Toast.LENGTH_SHORT).show()
+//            val intent = Intent(context, MainActivity::class.java)
+//            startActivity(intent)
         }
     }
 //    override fun onCreate(savedInstanceState: Bundle?) {
