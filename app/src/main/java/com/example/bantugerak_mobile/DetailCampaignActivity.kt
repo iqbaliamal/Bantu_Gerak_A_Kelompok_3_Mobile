@@ -41,8 +41,9 @@ class DetailCampaignActivity : AppCompatActivity() {
     private fun getData() {
         val data = intent.getStringExtra("extra")
         val campaign = Gson().fromJson<Campaign>(data, Campaign::class.java)
+        val sum_total = Integer.valueOf(campaign.sum_donation[0].total)
 
-        val totalSementara = Integer.valueOf(campaign.sum_donation[0].total)
+        val totalSementara = sum_total
         val target = Integer.valueOf(campaign.target_donation)
         //set value
 

@@ -17,9 +17,9 @@ class Campaigns: Serializable {
     var user_id = User()
     lateinit var created_at: String
     lateinit var updated_at: String
-    var sum_donation = SumDonation()
+    var sum_donation = ArrayList<SumDonation>()
 
-    var campaigns:ArrayList<Campaign> = ArrayList()
+//    var campaigns:ArrayList<Campaign> = ArrayList()
 
     var selected = true
 }

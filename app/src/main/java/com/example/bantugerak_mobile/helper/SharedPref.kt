@@ -3,10 +3,11 @@ package com.example.bantugerak_mobile.helper
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.bantugerak_mobile.fragment.donationFragment
 import com.example.bantugerak_mobile.model.User
 import com.google.gson.Gson
 
-class SharedPref(activity: Activity) {
+class SharedPref(activity: Activity){
 
     val satlogin = "login"
     val name = "name"

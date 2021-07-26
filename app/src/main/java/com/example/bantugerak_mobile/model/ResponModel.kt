@@ -7,5 +7,7 @@ class ResponModel {
 
     var campaigns:ArrayList<Campaign> = ArrayList()
 
+//    var donations: ArrayList<Donation> = ArrayList()
+
 
 }

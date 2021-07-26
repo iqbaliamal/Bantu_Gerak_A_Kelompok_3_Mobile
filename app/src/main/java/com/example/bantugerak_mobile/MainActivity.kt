@@ -1,18 +1,9 @@
 package com.example.bantugerak_mobile
 
-import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.denzcoskun.imageslider.ImageSlider
-import com.denzcoskun.imageslider.constants.ScaleTypes
-import com.denzcoskun.imageslider.models.SlideModel
 import android.content.ContentValues.TAG
 import android.content.Intent
 import com.example.bantugerak_mobile.fragment.HomeFragment
@@ -21,8 +12,6 @@ import com.example.bantugerak_mobile.fragment.donationFragment
 import com.example.bantugerak_mobile.fragment.profileFragment
 import com.example.bantugerak_mobile.helper.SharedPref
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.util.*
-import androidx.collection.arraySetOf as arraySetOf1
 
 class MainActivity : AppCompatActivity() {
 //    lateinit var myDb: MyDatabase

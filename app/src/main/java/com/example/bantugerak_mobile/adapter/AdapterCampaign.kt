@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bantugerak_mobile.R.*
 import com.example.bantugerak_mobile.helper.helper
 import com.example.bantugerak_mobile.model.Campaign
+import com.example.bantugerak_mobile.model.Campaigns
 import com.example.bantugerak_mobile.model.SumDonation
 import com.example.bantugerak_mobile.util.listener.CampaignItemListener
 import com.squareup.picasso.Picasso
@@ -19,7 +20,6 @@ import kotlin.collections.ArrayList
 class AdapterCampaign(var data: ArrayList<Campaign>):RecyclerView.Adapter<AdapterCampaign.Holder>() {
 
 
-    var listSum: List<SumDonation> = ArrayList()
     private lateinit var campaignItemListener: CampaignItemListener
 
     fun itemListener(listener: CampaignItemListener) {
@@ -29,7 +29,6 @@ class AdapterCampaign(var data: ArrayList<Campaign>):RecyclerView.Adapter<Adapte
     class Holder(view: View):RecyclerView.ViewHolder(view){
         val tvTitle: TextView = view.findViewById(id.titleTv)
         val tvPenggalang: TextView = view.findViewById(id.penggalangTv)
-//        val tvDanaterkumpul: TextView = view.findViewById(id.danaTv)
         val tvDanatarget: TextView = view.findViewById(id.targetDonationTv)
         val tvMaxdate: TextView = view.findViewById(id.endDateTv)
         val ivImage: ImageView = view.findViewById(id.imageIv)

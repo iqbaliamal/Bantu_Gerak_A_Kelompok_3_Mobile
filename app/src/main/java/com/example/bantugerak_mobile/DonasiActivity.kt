@@ -1,5 +1,7 @@
 package com.example.bantugerak_mobile
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,7 +24,10 @@ class DonasiActivity : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         donasi_sekarang.setOnClickListener {
-            Toast.makeText(context, "You pressed this button", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "You pressed this button", Toast.LENGTH_SHORT).show()
+            val openURL = Intent(android.content.Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("http://bantugerak.workshopjti.com/")
+            startActivity(openURL)
         }
     }
 //    override fun onCreate(savedInstanceState: Bundle?) {

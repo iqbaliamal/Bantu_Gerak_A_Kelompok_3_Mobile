@@ -39,7 +39,7 @@ class RegisterActivity : AppCompatActivity() {
             register()
         }
 
-        dataDummy()
+//        dataDummy()
     }
 
     fun dataDummy() {

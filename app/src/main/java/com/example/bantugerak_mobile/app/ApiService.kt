@@ -1,10 +1,8 @@
 package com.example.bantugerak_mobile.app
 
 import com.example.bantugerak_mobile.model.ResponModel
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.Call
+import retrofit2.http.*
 
 interface ApiService {
     @FormUrlEncoded
@@ -25,5 +23,10 @@ interface ApiService {
 
     @GET("campaign")
     fun getCampaign():retrofit2.Call<ResponModel>
+
+    @GET("donation/{id}")
+    fun getDonation(
+            @Path("id") id: Int
+    ): Call<ResponModel>
 
 }

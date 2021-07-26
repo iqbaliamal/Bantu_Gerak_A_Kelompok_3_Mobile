@@ -8,13 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.Navigation
-import com.example.bantugerak_mobile.DonasiActivity
 import com.example.bantugerak_mobile.LoginActivity
 import com.example.bantugerak_mobile.R
 import com.example.bantugerak_mobile.helper.SharedPref
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
